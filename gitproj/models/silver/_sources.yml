@@ -1,0 +1,9 @@
+sources:
+  - name: bronze
+    database: GITPROJ
+    schema: bronze
+    tables:
+      - name: comments
+      - name: issues
+      - name: labels
+      - name: milestones 

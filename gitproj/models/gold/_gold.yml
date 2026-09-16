@@ -1,0 +1,47 @@
+version: 2
+models:
+  - name: fact_comments
+    columns:
+      - name: comment_id
+        tests: ['unique', not_null]
+      - name: issue_id
+        tests: 
+          - relationships: { to: ref('fact_issues'), field: issue_id}
+      - name: user_id
+        tests: 
+          - relationships: { to: ref('dim_users'), field: user_id}
+      
+  - name: fact_issues
+    columns:
+      - name: issue_id
+        tests: ['unique', not_null]
+      - name: user_id
+        tests: 
+          - relationships: { to: ref('dim_users'), field: user_id}
+      - name: milestone_id
+        tests: 
+          - relationships: { to: ref('dim_milestones'), field: milestone_id}
+
+  - name: dim_labels
+    columns:
+      - name: label_id
+        tests: ['unique', not_null]
+
+  - name: dim_issues_labels
+    columns:
+      - name: label_id
+        tests: 
+          - relationships: { to: ref('dim_labels'), field: label_id}
+      - name: issue_id
+        tests: 
+          - relationships: { to: ref('fact_issues'), field: issue_id}
+
+  - name: dim_milestones
+    columns:
+      - name: milestone_id
+        tests: ['unique', not_null]
+
+  - name: dim_users
+    columns:
+      - name: user_id
+        tests: ['unique', not_null]

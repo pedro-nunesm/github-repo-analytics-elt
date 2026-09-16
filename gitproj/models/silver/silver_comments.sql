@@ -1,6 +1,7 @@
 with silver_comments as (
     select 
         raw_json:id::varchar as comment_id,
+        raw_json:issue_url::varchar as issue_url,
         raw_json:user.id::varchar as user_id,
         raw_json:author_association::varchar as author_association,
         raw_json:body::varchar as body,

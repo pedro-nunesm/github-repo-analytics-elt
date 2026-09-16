@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: silver_comments
+    columns:
+      - name: comment_id
+        tests: ['unique', not_null]
+  - name: silver_issues
+    columns:
+      - name: issue_id
+        tests: ['unique', not_null]
+
+  - name: silver_labels
+    columns:
+      - name: label_id
+        tests: ['unique', not_null]
+
+  - name: silver_milestones
+    columns:
+      - name: milestone_id
+        tests: ['unique', not_null]
+
+  - name: silver_users
+    columns:
+      - name: user_id
+        tests: ['unique', not_null]

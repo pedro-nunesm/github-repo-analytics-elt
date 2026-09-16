@@ -1,2 +1,14 @@
 .env
 notes.txt
+logs/
+airflow/logs
+airflow/dags/__pycache__
+
+
+gitproj/target/
+gitproj/dbt_packages/
+gitproj/logs/
+gitproj/.env
+gitproj/dbt_internal_packages/
+gitproj/profiles.yml
+logs/

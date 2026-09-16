@@ -8,6 +8,8 @@ with fact_comments as (
         c.body,
         c.created_at,
         c.updated_at,
+        TO_NUMBER(TO_CHAR(c.created_at, 'YYYYMMDD')) AS created_date_key,
+        TO_NUMBER(TO_CHAR(c.updated_at, 'YYYYMMDD')) AS updated_date_key,
         c.ingestion_timestamp
     from {{ ref('silver_comments')}} c
     left join {{ ref('silver_issues')}} i using (issue_url)

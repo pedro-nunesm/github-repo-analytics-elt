@@ -49,7 +49,29 @@ select
             i.created_at,
             cm.first_comment_at
         ) / 3600.0
-    END AS hours_to_first_comment
+    END AS hours_to_first_comment,
+
+    --Discussion Duration
+    CASE
+        WHEN cm.first_comment_at IS NOT NULL
+        AND cm.last_comment_at IS NOT NULL
+        THEN DATEDIFF(
+            'second',
+            cm.first_comment_at,
+            cm.last_comment_at
+        ) / 86400.0
+    END AS discussion_duration_days,
+
+    -- Days to resolution
+    CASE
+        WHEN i.closed_at IS NOT NULL
+        THEN DATEDIFF(
+            'second',
+            i.created_at,
+            i.closed_at
+        ) / 86400.0
+    END AS resolution_days
+    
 
     FROM {{ref('fact_issues')}} i
     LEFT JOIN comment_metrics cm ON i.issue_id = cm.issue_id

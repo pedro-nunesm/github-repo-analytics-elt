@@ -10,6 +10,18 @@ models:
       - name: user_id
         tests: 
           - relationships: { to: ref('dim_users'), field: user_id}
+      - name: created_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: updated_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
       
   - name: fact_issues
     columns:
@@ -21,6 +33,24 @@ models:
       - name: milestone_id
         tests: 
           - relationships: { to: ref('dim_milestones'), field: milestone_id}
+      - name: created_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: updated_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: closed_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
 
   - name: dim_labels
     columns:
@@ -40,6 +70,30 @@ models:
     columns:
       - name: milestone_id
         tests: ['unique', not_null]
+      - name: created_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: updated_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: closed_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
+      - name: duo_date_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
 
   - name: dim_users
     columns:

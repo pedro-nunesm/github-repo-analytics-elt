@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ai
+    database: GITPROJ
+    schema: AI
+    tables: 
+      - name: issues_enrich

@@ -1,14 +1,20 @@
+# Environment & Secrets
 .env
+.env.*
+profiles.yml
 notes.txt
-logs/
-airflow/logs
-airflow/dags/__pycache__
 
-
-gitproj/target/
-gitproj/dbt_packages/
-gitproj/logs/
-gitproj/.env
-gitproj/dbt_internal_packages/
-gitproj/profiles.yml
+# Logs
 logs/
+**/logs/
+dbt.log
+**/dbt.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# dbt & Build Artifacts
+target/
+dbt_packages/
+dbt_internal_packages/

@@ -1,12 +1,11 @@
-# GitHub Insights Pipeline: Modern Data Stack ELT with LLM Enrichment
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
+# GitHub Insights Pipeline: Data Stack ELT with LLM Enrichment
 ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat&logo=dbt&logoColor=white)
-![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat&logo=apacheairflow&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?logo=apacheairflow&logoColor=fff)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-yellow)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![GPT-mini](https://custom-icon-badges.demolab.com/badge/GPT--mini-74aa9c?logo=openai&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
 An end-to-end analytics pipeline that extracts activity data (issues, comments, labels, milestones) from a GitHub repository via the GitHub REST API, lands it in S3, loads it into Snowflake, transforms it into a dimensional model with dbt, and enriches issues with LLM-based severity classification. The batch is orchestrated with Apache Airflow and runs in Docker.

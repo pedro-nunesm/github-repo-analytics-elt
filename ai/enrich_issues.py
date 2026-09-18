@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 MODEL = "gpt-4o-mini"
 
-SAMPLE_N = 10
+SAMPLE_N = int(os.getenv("SAMPLE_N", "10"))
 
-client = OpenAI(api_key=os.getenv("OPENAI_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 SYSTEM_PROMPT = """
 You are an AI system responsible for classifying the severity of GitHub issues.

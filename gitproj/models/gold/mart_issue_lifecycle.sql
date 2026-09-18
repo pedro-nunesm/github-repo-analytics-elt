@@ -8,7 +8,6 @@ with comment_metrics as (
     from {{ref('fact_comments')}}
     GROUP BY issue_id
 ),
----74 NULLS para issue_id
 
 
 label_metrics as(

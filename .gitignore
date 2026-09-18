@@ -18,3 +18,5 @@ __pycache__/
 target/
 dbt_packages/
 dbt_internal_packages/
+
+.vscode/

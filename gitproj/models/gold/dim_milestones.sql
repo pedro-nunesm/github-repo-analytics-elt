@@ -5,7 +5,7 @@ with dim_milestones as (
         title,
         "description",
         "state",
-        duo_on,
+        due_on,
         created_at,
         updated_at,
         TO_NUMBER(TO_CHAR(created_at, 'YYYYMMDD')) AS created_date_key,
@@ -15,9 +15,9 @@ with dim_milestones as (
                 THEN TO_NUMBER(TO_CHAR(closed_at, 'YYYYMMDD'))
         END AS closed_date_key,
         CASE
-            WHEN duo_on IS NOT NULL
-                THEN TO_NUMBER(TO_CHAR(duo_on, 'YYYYMMDD'))
-        END AS duo_date_key,
+            WHEN due_on IS NOT NULL
+                THEN TO_NUMBER(TO_CHAR(due_on, 'YYYYMMDD'))
+        END AS due_date_key,
         source_file,
         ingestion_timestamp
     from {{ ref('silver_milestones')}}

@@ -5,7 +5,7 @@ with silver_milestones as(
         raw_json:title::varchar as title,
         raw_json:"description"::varchar as "description",
         raw_json:"state"::varchar as "state",
-        raw_json:duo_on::timestamp_tz as duo_on,
+        raw_json:due_on::timestamp_tz as due_on,
         raw_json:created_at::timestamp_tz as created_at,
         raw_json:updated_at::timestamp_tz as updated_at,
         raw_json:closed_at::timestamp_tz as closed_at,
